@@ -34,8 +34,8 @@
 						'.fc-bgevent-skeleton'
 					);
 					if (fcContainer.length) {
-						that.coordMap.build();
-						var cell = that.coordMap.getCell(ev.pageX, ev.pageY);
+						that.prepareHits();
+                                                var cell = that.queryHit(ev.pageX, ev.pageY);
 						if (cell)
 							return that.trigger(
 								'dayRightclick', null, cell.start, ev
