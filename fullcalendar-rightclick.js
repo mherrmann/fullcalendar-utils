@@ -23,8 +23,9 @@
                 var eventElt = $(ev.target).closest('.fc-event');
                 if (eventElt.length) {
                     var seg = eventElt.data('fc-seg');
+                    // check fullcalar version
                     if ($.fullCalendar.version == "3.1.0") {
-                        return that.publiclyTrigger('eventRightclick', this, seg.event, ev);
+                          return that.publiclyTrigger('eventRightclick', this, seg.event, ev);
                     }
                     return that.trigger('eventRightclick', this, seg.event, ev);
                 } else {
@@ -47,8 +48,9 @@
                             cell = that.getHitSpan(hit);
                         }
                         if (cell) {
+                             // check fullcalar version
                             if ($.fullCalendar.version == "3.1.0") {
-                                return that.publiclyTrigger('dayRightclick', null, cell.start, ev);
+                                  return that.publiclyTrigger('dayRightclick', null, cell.start, ev);
                             }
                             return that.trigger('dayRightclick', null, cell.start, ev);
                         }
