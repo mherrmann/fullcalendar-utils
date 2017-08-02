@@ -1,3 +1,5 @@
+This is an update for the right click lib , working with last stable release of fullcalendar.
+
 # fullcalendar-rightclick.js
 
 This small file adds two new callbacks to FullCalendar:
