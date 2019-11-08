@@ -7,7 +7,7 @@
 (function($) {
 	function monkeyPatchViewClass(View) {
 		View = View.class || View;
-		var renderFn = 'render' in View.prototype ? 'render' : 'renderDates';
+		var renderFn = 'render' in View.prototype ? 'render' : 'renderSkeleton';
 		var originalRender = View.prototype[renderFn];
 		View.prototype[renderFn] = function() {
 			originalRender.call(this);
@@ -61,7 +61,7 @@
 					// of FullCalendars default containers:
 					var fcContainer = $(ev.target).closest(
 						'.fc-bg, .fc-slats, .fc-content-skeleton, ' +
-						'.fc-bgevent-skeleton, .fc-highlight-skeleton'
+						'.fc-bgevent-skeleton, .fc-highlight-skeleton, .fc-widget-content'
 					);
 					if (fcContainer.length) {
 						var cell;
@@ -98,4 +98,5 @@
 	var fc = $.fullCalendar;
 	monkeyPatchViewClass(fc.views.agenda);
 	monkeyPatchViewClass(fc.views.basic);
+	monkeyPatchViewClass(fc.views.timeline);
 })(jQuery);
