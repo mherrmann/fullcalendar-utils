@@ -98,5 +98,7 @@
 	var fc = $.fullCalendar;
 	monkeyPatchViewClass(fc.views.agenda);
 	monkeyPatchViewClass(fc.views.basic);
+	if(fc.views.timeline){
 	monkeyPatchViewClass(fc.views.timeline);
+	}
 })(jQuery);
